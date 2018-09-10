@@ -1,0 +1,76 @@
+
+ 
+  <h1 style='text-align:center;font-size:500%'>Welcome</h1>
+ 
+  <div style="text-align:center;margin-top:10%">
+        <div ng-controller="loginSignup">
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">LOGIN</button>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content LOGIN MODAL -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">LOGIN DETAILS</h4>
+        </div>
+        <div class="modal-body">
+         <form  style='text-align:left;margin-left:30%'>
+          <label style="margin-right:10%">Email:</label> <input type="email" placeholder="email" required ng-model='email'  > <br>
+     <br> <label style="margin-right:2.4%" > Password:</label>  <input type="password" placeholder="password" required minlength="6" ng-model='password'><br>
+          <br>
+          <button class='btn btn-success' type='submit' ng-click="loginMethod()" style='margin-left:20%' >LOGIN</button>
+</form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"  >CLOSE</button>
+        </div>
+      </div>
+      
+    </div>
+</div>
+<br>
+<br><br>
+
+
+
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">SIGNUP</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal2" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content  SIGNUP MODAL -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">SIGNUP DETAILS</h4>
+      </div>
+      <div class="modal-body">
+       <form style="text-align: left; margin-left:25%" >
+      <label style='margin-right: 23.5%' > Email:</label>    <input type="email" placeholder="email" required ng-model='signupemail'><br>
+       <label style='margin-right: 16%' >  Password:</label> <input type="password" placeholder="password" required minlength="6" ng-model='signuppassword'><br>
+       <label style='margin-right: 2%' >  Confirm Password: </label> <input type="password" placeholder='re-enter password' required minlength='6' ng-model="confirmPassword">
+        <br>
+        <br>
+        <button class='btn btn-success' type='submit' ng-click='signupMethod()' style="margin-left:20%" >SIGNUP</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</div>
+</div>
+
+ 
+
+
+
+
+
+

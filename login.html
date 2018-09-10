@@ -1,0 +1,125 @@
+
+ <!-- IMPLEMENTIG OF THE NAVBAR -->
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="dropdown" style='margin-left:5em'>
+                    <a href="/login" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style='font-size:300%'>Users <span class="caret"></span></a>
+                    <ul class="dropdown-menu" >
+                      <li  ><a href=""  class='users' value='list' ng-click="userOption('list' , '1')" >List Users</a></li>
+                      <li  ><a href="" data-toggle="modal" data-target="#myModal2" ng-click="userOption('create' , '-1')" >Create users</a></li>
+                      <!-- <li  ><a href=""  class='users' value='delete' ng-click="userOption('delete')">Delete Users</a></li> -->
+                      <!-- <li  ><a href=""  class='users' value='update' ng-click="userOption('update')" >Update users</a></li> -->
+                      
+                    </ul>
+                  </li>
+       </ul>
+        <ul class="nav navbar-nav navbar-right">
+                
+          <li class="dropdown">
+            <li><a href="/" style='font-size:200%;padding-right:5em' >Logout</a></li> 
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="container">
+  
+
+    <!-- SHOW WHEN USER SELECTED LIST USER -->
+<div ng-if='selected==1'>
+  <table class="table" >
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>ID</th>
+          <th>Avatar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat=' i in countarray '>
+           <td style="font-weight:800" >{{firstname[i]}}</td> 
+               <td style="font-weight:800" >{{ lastname[i]}}</td>
+                <td style="font-weight:800" >{{id[i]}}</td>
+                  <td style="font-weight:800"> {{avatar[i]}}  </td> 
+          <td><button class='btn btn-warning' data-toggle="modal" data-target="#myModal2" ng-click='editing(firstname[i] , i)' > Edit </button></td>
+       <td> <button class='btn btn-danger' ng-click=delete($index)> Delete </button> </td>
+        </tr>
+      
+      </tbody>
+    </table>
+
+<button class="btn btn-info"  ng-click='userOption("list" , "1")' > Page 1 </button>
+
+<button class="btn btn-info"  ng-click='userOption("list" , "2")' > Page 2 </button>
+<button class="btn btn-info"  ng-click='userOption("list" , "3")' > Page 3 </button>
+<button class="btn btn-info"  ng-click='userOption("list" , "4")' > Page 4 </button>
+</div>
+
+
+<div style="text-align:center">
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+   
+      <!-- MODAL FOR USER EDITING -->
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">USER DETAILS</h4>
+        </div>
+        <div class="modal-body">
+         <form style='margin-left:10%'>
+     <label style='margin-right:4%'>  Name:</label>     <input type='text'  placeholder="{{placeholder}}"  required  ng-model='userName' minlength="4"><br>
+     <br> <label style='margin-right:5%' >  Job: </label>    <input type="text" placeholder="job"  minlength="2" ng-model='userJob'><br>
+          
+  
+          <br>
+          <button class='btn btn-success' type='submit' ng-click='create()' style='margin-left:10%'>DONE</button>
+  </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+</div>
+
+
+  <div style='text-align:center' ng-if='selected==0||selected==2'>
+    <h1 style='font-size:18em;margin-top:10%' >Hello</h1>
+   
+    
+  </div>
+  </div>
